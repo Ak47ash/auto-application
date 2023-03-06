@@ -1,6 +1,5 @@
 from contextlib import contextmanager
 from selenium.common.exceptions import WebDriverException
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from undetected_chromedriver import Chrome, ChromeOptions
 
 
@@ -17,16 +16,8 @@ def initialize_webdriver(headless=True):
         options.add_argument("--start-fullscreen")
         if headless:
             options.add_argument("--headless")
-        # options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        # options.add_experimental_option("useAutomationExtension", False)
-        # capabilities = {
-        #     "goog:loggingPrefs": {"performance": "ALL"}
-        # }
-        # options.add_experimental_option('w3c', False)
-        # options.add_experimental_option('perfLoggingPrefs', capabilities)
 
         driver = Chrome(options=options)
-
         yield driver
     finally:
         if driver:

@@ -121,6 +121,7 @@ def check_if_required(elm):
 
 
 def get_additional_questions(driver, fields):
+    print("Working on additional questions...")
     final_data = []
     for field in fields:
         complete_question = field.text
@@ -188,6 +189,7 @@ def get_additional_questions(driver, fields):
                     'page': 0
                 }
                 final_data.append(this_data)
+    print("Done with additional questions...")
     return final_data
 
 
