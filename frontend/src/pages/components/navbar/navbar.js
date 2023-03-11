@@ -12,6 +12,7 @@ import {Avatar, Typography} from "@mui/material";
 
 function Navbar() {
     const { data: session } = useSession()
+    console.log(`Session: ${JSON.stringify(session)} `)
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleMenuOpen = (event) => {
@@ -55,7 +56,10 @@ function Navbar() {
                         </Menu>
                     </div>
                 ) : (
+                    <>
+                    {/*<Link href="/components/login/login">Login</Link>*/}
                     <Button onClick={signIn} color="inherit">Login</Button>
+                    </>
                 )}
             </Toolbar>
         </AppBar>
